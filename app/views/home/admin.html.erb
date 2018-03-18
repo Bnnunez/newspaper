@@ -1,0 +1,69 @@
+<style>
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent
+}
+
+</style>
+
+<section class="content-section text-center" style="min-width:1000px">
+
+<div class="back_page-2">
+
+<div class="container_form"  style= "max-width:1020px; min-width:670px">
+
+  <div class="col-md-10" style="margin-left:8.333%; margin-right:8.333%; ">
+    <h2>Noticias </h2>
+
+    <div class="row " style="background:rgba(229, 228, 226,0.3)">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>Bajada</th>
+              <th>Fecha Publicación</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @posts.each do |post| %>
+              <tr>
+                <td><%= post.title %></td>
+                <td><%= post.downtitle %></td>
+
+                <td><%= post.created_at.strftime('%d/%b/%Y %H:%M:%S') %></td>
+
+                <td><%= link_to 'Ver', post %></td>
+                <td><%= link_to 'Editar', edit_post_path(post) %></td>
+                <td><%= link_to 'Eliminar', home_admin_path, method: :delete, data: { confirm:
+                  "
+                  Estas eliminando la noticia:
+                              "+ post.title+"
+                  ¿Deseas continuar?", style: "text-align: center;" } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+
+
+    </div>
+    <%= link_to 'Volver', root_path,class:"btn" %>
+
+  </div>
+
+
+</div>
+
+
+
+</section>

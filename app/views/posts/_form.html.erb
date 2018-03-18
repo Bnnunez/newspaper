@@ -1,0 +1,72 @@
+
+<div class="back_page">
+  <div style="padding-top:6em;">
+
+    <%= form_for(post) do |f| %>
+
+      <div class="container_form">
+        <div class="sky-form" style="min-width: 450px; max-width:700px; margin:10px; ">
+          <header> Formulario de Noticias <%= link_to 'Volver a Home', root_path, class:"btn", style:"padding-left:30%;" %></header>
+
+            <header> Información <header>
+              <% if post.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+                  <ul>
+                  <% post.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+          <fieldset>
+            <section>
+              <div class="input">
+                Titulo de la Noticia
+                <%= f.text_area :title , style:"width:100%"  %>
+
+              </div>
+              
+            </section>
+
+            <section>
+              <div class="input">
+
+                Bajada de la Noticia
+
+                <%= f.text_area :downtitle, style:"width:100%" %>
+
+              </div>
+            </section>
+
+            <section>
+              <div class="input-file">
+                Cuerpo de la Noticia
+                <center>
+                  <%= f.text_area :body, style:"width:100%" %> </center>
+
+              </div>
+            </section>
+
+          </fieldset>
+
+
+
+
+
+        <footer class="text-center">
+          <%= f.submit "Crear", class:"btn" %>
+
+
+
+        </footer>
+        </div>
+        </div>
+      </div>
+
+      <%end%>
+
+
+  </div>
+</div>

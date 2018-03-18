@@ -1,0 +1,27 @@
+<div class="sky-form" style="min-width: 350px; max-width:400px; margin:10px; ">
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+
+    <fieldset>
+      <section>
+        <div class="input">
+            Nombre de Usuario (Obligatorio)
+          <%= f.text_field :user, style:"width:100%"  %>
+
+        </div>
+
+      </section>
+
+      <section>
+        <div class="input">
+            Contenido (Obligatorio)
+          <%= f.text_area :body, style:"width:100%"  %>
+
+        </div>
+
+      </section>
+    </fieldset>
+    <div class="actions">
+      <%= f.submit "Enviar Comentario", class:"btn" %>
+    </div>
+  <% end %>
+</div >

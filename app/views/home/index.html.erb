@@ -1,0 +1,76 @@
+<!-- Intro Header -->
+<style>
+.p{
+  margin:0 0 5px;
+  width: 90%;
+  font-size: 20px;
+  font-family: sans-serif Verdana;
+  word-wrap: break-word;
+}
+.col-md-12, .col-md-7,.col-md-3,.col-md-7{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+}
+
+</style>
+
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Zero Noticias</h1>
+                    <p class="intro-text">Sitio de Recopilación de Noticias</p>
+                    <a href="#news" class="btn btn-circle page-scroll" >
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="news" class="container content-section text-center" style="min-width:1000px">
+
+
+
+          <h1>Noticias</h1>
+
+          <% count = 0 %>
+          		  <div class="row">
+          		  <% @noticia.each do |noticium| %>
+          		      <div class="col-md-4 text-center container" style="margin-bottom:80px;margin-left:3%; border:2px solid grey; border-radius: 10px;">
+                      <h2> <%= noticium.title %> </h2>
+                      <h4> <%= noticium.downtitle %> </h4>
+                      <p class=".p">  <%= truncate(noticium.body.to_s, length: 503 ) { link_to "Seguir leyendo", noticium }  %> </p>
+                      <%= noticium.created_at.strftime('%d/%b/%Y %H:%M:%S') %>
+                      <footer>
+                      <div class="row" style="background:rgba(209, 208, 206,0.25)">
+                        <div class="col-md-7" >
+                          Comentarios:
+                          <p class=".p"> <%=  noticium.comments.count %> </p>
+                        </div>
+                        <div class="col-md-3" >
+                          <%= link_to "Ver", noticium %>
+                        </div>
+
+                      </div>
+                    </footer>
+          		      </div>
+          		      <% count += 1 %>
+          		      <% if count == 3%>
+          		        </div>
+          		        <% count = 0 %>
+          		        <div class="row">
+          		      <%end%>
+          		  <% end %>
+          		  </div>
+
+
+
+
+</section>
