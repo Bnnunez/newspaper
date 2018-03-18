@@ -34,7 +34,7 @@
 </header>
 
 <!-- About Section -->
-<section id="news" class="container content-section text-center" style="min-width:1000px">
+<section id="news" class=" content-section text-center" style="min-width:1000px">
 
 
 
@@ -43,7 +43,7 @@
           <% count = 0 %>
           		  <div class="row">
           		  <% @noticia.each do |noticium| %>
-          		      <div class="col-md-4 text-center container" style="margin-bottom:80px;margin-left:3%; border:2px solid grey; border-radius: 10px;">
+          		      <div class="col-md-3 text-center container" style="margin-bottom:80px;margin-left:3%; border:2px solid grey; border-radius: 10px;">
                       <h2> <%= noticium.title %> </h2>
                       <h4> <%= noticium.downtitle %> </h4>
                       <p class=".p">  <%= truncate(noticium.body.to_s, length: 503 ) { link_to "Seguir leyendo", noticium }  %> </p>
@@ -62,7 +62,7 @@
                     </footer>
           		      </div>
           		      <% count += 1 %>
-          		      <% if count == 2%>
+          		      <% if count == 3%>
           		        </div>
           		        <% count = 0 %>
           		        <div class="row">
