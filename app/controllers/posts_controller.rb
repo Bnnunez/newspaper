@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :must_be_admin, only: [:new, :edit, :update, :destroy, :index]
+  before_action :must_be_admin, only: [:new, :edit, :update, :destroy]
 
   def must_be_admin
       unless current_user && current_user.admin_role?
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    redirect_to home_admin_path
+    
   end
 
   # GET /posts/1

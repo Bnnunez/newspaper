@@ -48,4 +48,16 @@ Sin embargo, en otro tuit el jefe de Estado recalcó que Chile sometió a Bolivi
 
 Los alegatos en la Corte Internacional de La Haya se realizarán entre el 19 y 28 de marzo próximo. En la delegación chilena además del ministro de Relaciones Exteriores, Roberto Ampuero, estarán presentes el ex canciller, Heraldo Muñoz y el senador y ex candidato presidencial, Alejandro Guillier.')
 
-noticia4= Post.create(title: 'Las Noticias de esta página son sacados de diversos portales', downtitle:'Se Utilizan noticias de Ahora noticias, publimetro y otros portales', body:'Se buscan noticias solo para poblar la base de datos. Saludos')
+
+
+noticia5= Post.create(title: '', downtitle:'', body:'')
+
+noticia5= Post.create(title: '', downtitle:'', body:'')
+
+
+noticia4= Post.create(title: 'Las Noticias de esta página son sacados de diversos portales', downtitle:'Se utilizan noticias de Ahora noticias, publimetro y otros portales', body:'Se buscan noticias solo para poblar la base de datos. Saludos')
+
+
+#Comentarios
+
+comment1= Comment.create()
